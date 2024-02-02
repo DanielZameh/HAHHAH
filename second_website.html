@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Second Website</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+	<h1>User Data</h1>
+	<div id="userData"></div>
+	<script>
+		$(document).ready(function() {
+			$.ajax({
+				url: "https://danielzameh.github.io/KADJM/get\_user\_data.php",
+				type: "GET",
+				success: function(data) {
+					$("#userData").html(data);
+				},
+				error: function(error) {
+					console.error(error);
+				}
+			});
+		});
+	</script>
+</body>
+</html>
